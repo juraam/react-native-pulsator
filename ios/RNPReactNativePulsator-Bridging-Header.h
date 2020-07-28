@@ -1,2 +1,2 @@
-#import <Foundation/Foundation.h>
-#import "React/RCTViewManager.h"
+#import <React/RCTViewManager.h>
+#import <React/RCTView.h>
