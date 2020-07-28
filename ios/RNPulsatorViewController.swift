@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Pulsator
 
 @objc(RNPReactNativePulsator)
