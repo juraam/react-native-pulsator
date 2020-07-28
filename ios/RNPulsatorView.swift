@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 import Pulsator
 
-class RNPulsatorView: UIView {
+class RNPulsatorView: RCTView {
     public var pulsator: Pulsator!
     @objc var color: NSString = "" {
         didSet{
