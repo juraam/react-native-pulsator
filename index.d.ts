@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleProp, ViewStyle } from "react-native";
+import { StyleProp, ViewStyle, ViewProperties } from "react-native";
 
 type Offset = {
   x: Number;
   y: Number;
 }
 
-export interface PulsatorProperties {
+export interface PulsatorProperties extends ViewProperties {
   color: String;
 
   animationDuration: Number;
@@ -22,7 +22,7 @@ export interface PulsatorProperties {
   offset: Offset;
 }
 
-interface PulsatorStatic extends React.ComponentClass<PulsatorProperties> {}
+interface PulsatorStatic extends React.ComponentClass<PulsatorProperties> { }
 
 declare var Pulsator: PulsatorStatic;
 
