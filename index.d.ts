@@ -1,10 +1,5 @@
 import React from "react";
-import { StyleProp, ViewStyle, ViewProperties } from "react-native";
-
-type Offset = {
-  x: Number;
-  y: Number;
-}
+import { ViewProperties } from "react-native";
 
 export interface PulsatorProperties extends ViewProperties {
   color: String;
@@ -18,8 +13,6 @@ export interface PulsatorProperties extends ViewProperties {
   numPulse: Number;
 
   radius: Number;
-
-  offset: Offset;
 }
 
 interface PulsatorStatic extends React.ComponentClass<PulsatorProperties> { }
