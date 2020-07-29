@@ -19,9 +19,8 @@ class RNPulsatorViewController: RCTViewManager {
         return pulsatorView
     }
     
-    @objc
-    func setPulsator(_ isSet:Bool, resolve:RCTPromiseResolveBlock, reject:RCTPromiseRejectBlock){
-        let pulsator = pulsatorView.pulsator!
+    override class func requiresMainQueueSetup() -> Bool {
+        return true
     }
     
 
