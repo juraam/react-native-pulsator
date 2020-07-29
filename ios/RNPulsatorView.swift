@@ -11,7 +11,10 @@ import UIKit
 import Pulsator
 
 class RNPulsatorView: RCTView {
-    public var pulsator: Pulsator!
+    lazy var pulsator: Pulsator = {
+        let pulsator = Pulsator()
+        return pulsator
+    }()
     @objc var color: NSString = "" {
         didSet{
             pulsator.backgroundColor = hexStringToCGColor(hex: color as String)
@@ -48,34 +51,17 @@ class RNPulsatorView: RCTView {
         }
     }
     
-    @objc var offset: NSDictionary = [:] {
-        didSet{
-            
-        }
-    }
-    
-    init() {
-        super.init(frame: CGRect())
-        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.autoresizesSubviews = true
-        self.pulsator = Pulsator()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     override func layoutSubviews() {
-        var offsetX = 0.0
-        var offsetY = 0.0
-        if (self.offset.object(forKey: "x") != nil) {
-            offsetX = self.offset.object(forKey: "x") as! Double
-        }
-        if (self.offset.object(forKey: "y") != nil) {
-            offsetY = self.offset.object(forKey: "y") as! Double
-        }
-        let x = bounds.size.width / 2 + CGFloat(offsetX)
-        let y = bounds.size.height / 2 + CGFloat(offsetY)
+        super.layoutSubviews()
+        let x = bounds.size.width / 2
+        let y = bounds.size.height / 2
         pulsator.position = CGPoint(x: x, y: y)
         layer.addSublayer(pulsator)
         self.pulsator.start()
-        super.layoutSubviews()
     }
     
     func hexStringToCGColor (hex:String) -> CGColor {
