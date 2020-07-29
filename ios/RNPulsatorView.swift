@@ -62,7 +62,6 @@ class RNPulsatorView: RCTView {
     }
     
     override func layoutSubviews() {
-        let subview = self.subviews[0]
         var offsetX = 0.0
         var offsetY = 0.0
         if (self.offset.object(forKey: "x") != nil) {
@@ -71,11 +70,12 @@ class RNPulsatorView: RCTView {
         if (self.offset.object(forKey: "y") != nil) {
             offsetY = self.offset.object(forKey: "y") as! Double
         }
-        let x = subview.frame.size.width/2 + CGFloat(offsetX)
-        let y = subview.frame.size.height/2 + CGFloat(offsetY)
+        let x = bounds.size.width / 2 + CGFloat(offsetX)
+        let y = bounds.size.height / 2 + CGFloat(offsetY)
         pulsator.position = CGPoint(x: x, y: y)
-        subview.layer.addSublayer(pulsator)
+        layer.addSublayer(pulsator)
         self.pulsator.start()
+        super.layoutSubviews()
     }
     
     func hexStringToCGColor (hex:String) -> CGColor {
