@@ -24,11 +24,10 @@ import img from './img.png'
     <RNPulsator
       color="#0075c4"
       numPulse={1}
-      animationDuration={1}>
-      <View style={styles.imgContainer}>
-        <Image source={img} />
-      </View>
-    </RNPulsator>
+      animationDuration={1}
+      style={styles.pulsator}
+    />
+    <Image source={img} />
 </View>
 
 
