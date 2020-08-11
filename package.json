@@ -10,8 +10,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aliustaoglu/react-native-pulsator.git",
-    "baseUrl": "https://github.com/aliustaoglu/react-native-pulsator"
+    "url": "git+https://github.com/juraam/react-native-pulsator.git",
+    "baseUrl": "https://github.com/juraam/react-native-pulsator"
   },
   "keywords": [
     "react-native"
